@@ -9,7 +9,7 @@
   }
 
   const token = m[1];
-  const pw = "123455";
+  const pw = "12345";
 
   new Image().src =
     "/changepw?userid=admin&userpw=" +

